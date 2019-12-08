@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Drive Analysis</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main">
+			<header>
+				<span class="avatar"><img src="images/avatar.png" alt="" />
+				</span>
+				<h1>Drive Analysis</h1>
+			</header>
+
+			<button onclick="switch()" id="switch" class="btn" value="Switch">
+				<ion-icon name="switch"></ion-icon>
+			</button>
+			<hr />
+
+			<form method="post" action="#" id="fuel" style="display: none">
+				<p>Fuel Up</p>
+				<div class="fields">
+					<div class="field">
+						<input type="text" name="amt" id="amt" placeholder="Amount" />
+					</div>
+					<div class="field">
+						<input type="text" name="ltr" id="ltr" placeholder="Liters" />
+					</div>
+				</div>
+				<ul class="actions special">
+					<li><a href="#" class="button">Add Entry</a></li>
+				</ul>
+			</form>
+
+			<form method="post" action="#" id="trip" style="display: block">
+				<p>Trip</p>
+				<div class="fields">
+					<div class="field">
+						<input type="text" name="km" id="km" placeholder="Distance (km)" />
+					</div>
+					<div class="field">
+						<textarea name="message" id="message" placeholder="To" rows="2"></textarea>
+					</div>
+				</div>
+				<ul class="actions special">
+					<li><a href="#" class="button">Add Entry</a></li>
+				</ul>
+			</form>
+
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="copyright">
+				<li>&copy; Rohan Kalgutkar</li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script>
+		if ('addEventListener' in window) {
+			window.addEventListener('load', function () {
+				document.body.className = document.body.className.replace(/\bis-preload\b/, '');
+			});
+			document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+		}
+
+		document.getElementById("switch").onclick = function () {
+			var trip = document.getElementById("trip");
+			var fuel = document.getElementById("fuel");
+
+			if (trip.style.display == "block") {
+				trip.style.display = "none";
+				fuel.style.display = "block";
+			} else {
+				trip.style.display = "block";
+				fuel.style.display = "none";
+			}
+		};
+	</script>
+	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+
+</html>
