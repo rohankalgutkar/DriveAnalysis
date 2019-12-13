@@ -33,22 +33,7 @@
 			</button>
 			<hr />
 
-			<form method="post" action="#" id="fuel" style="display: none">
-				<p>Fuel Up</p>
-				<div class="fields">
-					<div class="field">
-						<input type="text" name="amt" id="amt" placeholder="Amount" />
-					</div>
-					<div class="field">
-						<input type="text" name="ltr" id="ltr" placeholder="Liters" />
-					</div>
-				</div>
-				<ul class="actions special">
-					<li><a href="#" class="button">Add Entry</a></li>
-				</ul>
-			</form>
-
-			<form method="post" action="#" id="trip" style="display: block">
+			<form method="post" action="trip" id="trip" style="display: block">
 				<p>Trip</p>
 				<div class="fields">
 					<div class="field">
@@ -58,9 +43,20 @@
 						<textarea name="message" id="message" placeholder="To" rows="2"></textarea>
 					</div>
 				</div>
-				<ul class="actions special">
-					<li><a href="#" class="button">Add Entry</a></li>
-				</ul>
+				<input type="submit" value="Add Entry">
+			</form>
+
+			<form method="post" action="fuel" id="fuel" style="display: none">
+				<p>Fuel Up</p>
+				<div class="fields">
+					<div class="field">
+						<input type="text" name="amt" id="amt" placeholder="Amount" />
+					</div>
+					<div class="field">
+						<input type="text" name="ltr" id="ltr" placeholder="Liters" />
+					</div>
+				</div>
+				<input type="submit" value="Add Entry">
 			</form>
 
 		</section>
