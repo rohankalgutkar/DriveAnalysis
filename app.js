@@ -3,6 +3,7 @@ const path = require('path')
 const fs = require('fs')
 const os = require('os')
 const moment = require('moment');
+const gs = require('./spreadsheet.js')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -14,6 +15,7 @@ app.use(express.urlencoded({
 }));
 
 app.get('/', (req, res) => {
+    gs.accessSpreadsheet()
     res.sendFile(path.join(__dirname + '/html/index.html'))
     // res.send('Hello World!')
 })
@@ -21,13 +23,19 @@ app.get('/', (req, res) => {
 app.post('/trip', (req, res) => {
     let {
         km,
-        message
+        to
     } = req.body
 
-    let trip = [moment(new Date()).format(dateFormat), km, message]
+    let trip = {
+        date: moment(new Date()).format(dateFormat),
+        KM: km,
+        To: to
+    }
 
-    fs.appendFileSync('trips.csv', trip + os.EOL)
-    res.send('Trip Added')
+    // console.log('trip', trip);
+
+    gs.accessSpreadsheet(0, trip)
+    res.send('Trip details added')
 })
 
 app.post('/fuel', (req, res) => {
@@ -36,9 +44,14 @@ app.post('/fuel', (req, res) => {
         ltr
     } = req.body
 
-    let fuelup = [moment(new Date()).format(dateFormat), ltr, amt, amt / ltr]
+    let fuelup = {
+        date: moment(new Date()).format(dateFormat),
+        liter: ltr,
+        amount: amt,
+        rate: amt / ltr
+    }
 
-    fs.appendFileSync('fuelup.csv', fuelup + os.EOL)
+    gs.accessSpreadsheet(1, fuelup)
     res.send('Fuel-up Added')
 })
 
