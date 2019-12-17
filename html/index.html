@@ -25,7 +25,7 @@
 			<header>
 				<span class="avatar"><img src="images/avatar.png" alt="" />
 				</span>
-				<h1>Drive Analysis</h1>
+				<h1>DRIVE ANALYSIS</h1>
 			</header>
 
 			<button onclick="switch()" id="switch" class="btn" value="Switch">
@@ -37,10 +37,10 @@
 				<p>Trip</p>
 				<div class="fields">
 					<div class="field">
-						<input type="text" name="km" id="km" placeholder="Distance (km)" />
+						<input type="number" name="km" id="km" placeholder="Distance (km)" autocomplete="off" />
 					</div>
 					<div class="field">
-						<textarea name="to" id="to" placeholder="To" rows="2"></textarea>
+						<input type="text" name="to" id="to" placeholder="To" autocomplete="off" />
 					</div>
 				</div>
 				<input type="submit" value="Add Entry">
@@ -50,10 +50,10 @@
 				<p>Fuel Up</p>
 				<div class="fields">
 					<div class="field">
-						<input type="text" name="amt" id="amt" placeholder="Amount" />
+						<input type="number" name="amount" id="amount" placeholder="Amount" autocomplete="off" />
 					</div>
 					<div class="field">
-						<input type="text" name="ltr" id="ltr" placeholder="Liters" />
+						<input type="number" name="liter" id="liter" placeholder="Liters" autocomplete="off" />
 					</div>
 				</div>
 				<input type="submit" value="Add Entry">
